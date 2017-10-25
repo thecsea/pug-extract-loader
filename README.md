@@ -14,7 +14,7 @@ this loader is projected to be appended to [pug-loader](https://github.com/pugjs
         test: /\.pug$/,
         loaders: [
             {loader: "file-loader", options: {context: path.resolve(__dirname, 'src', 'views', 'pages'), name: '[path][name].html'}}
-            {loader: 'pug-caller-loader', options: {locals: {pugVars}}},
+            {loader: 'pug-extract-loader', options: {locals: {pugVars}}},
             {loader: 'pug-loader', options: {pretty: true, doctype: 'html'}},
         ]
     }
