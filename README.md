@@ -12,10 +12,19 @@ This loader is projected to be appended to [pug-loader](https://github.com/pugjs
 ``` javascript
     {
         test: /\.pug$/,
+        include: [path.resolve(__dirname,'src', 'views', 'pages')],
         loaders: [
             {loader: 'file-loader', options: {context: path.resolve(__dirname, 'src', 'views', 'pages'), name: '[path][name].html'}}
             {loader: 'pug-extract-loader', options: {locals: {testVar: 'test'}}}},
             {loader: 'pug-loader', options: {pretty: true, doctype: 'html'}},
         ]
+    },
+    {
+        test: /\.pug$/,
+        include: [path.resolve(__dirname,'src', 'views', 'includes')],
+        loaders: [
+            {loader: 'pug-loader', options: {pretty: true, doctype: 'html'}},
+        ]
     }
 ```
+includes are parsed be main page, so the script should not be appended
