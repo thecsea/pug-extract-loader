@@ -1,10 +1,10 @@
 # pug-extract-loader
 [![npm version](https://badge.fury.io/js/pug-extract-loader.svg)](https://badge.fury.io/js/pug-extract-loader)
 
-webpack loader to extract pug to HTML, calling all dependencies found in the code
+Webpack loader to extract pug to HTML, calling all dependencies found in the code
 
-this loader is projected to be appended to [pug-loader](https://github.com/pugjs/pug-loader)  
-[file-loader](https://github.com/webpack-contrib/file-loader) can be appended to this loader
+This loader is projected to be appended to [pug-loader](https://github.com/pugjs/pug-loader)  
+[File-loader](https://github.com/webpack-contrib/file-loader) can be appended to this loader
 
 ## Usage
 
