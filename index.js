@@ -158,6 +158,7 @@ module.exports = function(source) {
   this.cacheable && this.cacheable()
   let options = loaderUtils.getOptions(this) || {}
   let locals = options.locals || {}
+  locals  = _(locals).cloneDeep()
   let callback = this.async()
 
   let executor = new Executor(this)
