@@ -27,4 +27,4 @@ This loader is projected to be appended to [pug-loader](https://github.com/pugjs
         ]
     }
 ```
-includes are parsed be main page, so the script should not be appended
+includes are parsed by main page, so the script should not be appended
