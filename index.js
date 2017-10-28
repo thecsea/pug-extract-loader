@@ -2,6 +2,7 @@
 const loaderUtils = require('loader-utils')
 const path = require('path')
 const vm = require('vm')
+const requireResolve = require('require-resolve')
 const _ = require('lodash')
 
 const MAX_RETRY = 5
@@ -137,7 +138,8 @@ class Executor{
   }
 
   async _loadResource(resource, filename, level){
-    let fullPath = path.resolve(filename, path.join('..',resource.replace(/!/gi, ''))).split("?")[0]
+    let fullPath = requireResolve(resource.replace(/!/gi, ''), filename).src
+    if(fullPath.match(/node_modules/gi)) return {key: resource, value: require(fullPath)}
     let loaded = await this._loadModule(fullPath)
     let executed = await this.execute(loaded, fullPath, level+1)
     return {key: resource, value: executed}
