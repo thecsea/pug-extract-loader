@@ -1,6 +1,6 @@
 {
   "name": "pug-extract-loader",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "webpack loader to extract pug to HTML, calling all dependencies found in the code",
   "main": "index.js",
   "scripts": {

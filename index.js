@@ -138,7 +138,7 @@ class Executor{
   }
 
   async _loadResource(resource, filename, level){
-    let fullPath = requireResolve(resource.replace(/!/gi, ''), filename).src
+    let fullPath = (requireResolve(resource.replace(/!/gi, ''), filename) || {}).src
     if(fullPath.match(/node_modules/gi)) return {key: resource, value: require(fullPath)}
     let loaded = await this._loadModule(fullPath)
     let executed = await this.execute(loaded, fullPath, level+1)
