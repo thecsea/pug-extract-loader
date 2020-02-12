@@ -5,7 +5,7 @@ const vm = require('vm')
 const requireResolve = require('require-resolve')
 const _ = require('lodash')
 
-const MAX_RETRY = 5
+const MAX_RETRY = 30
 const MAX_DEPTH = 30
 
 class Execution{
